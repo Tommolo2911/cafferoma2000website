@@ -59,8 +59,8 @@ export default function Pasticceria() {
       <section
         ref={gallerySection.elementRef as React.RefObject<HTMLElement>}
         className={`py-20 bg-white transition-all duration-1000 ${gallerySection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -78,8 +78,8 @@ export default function Pasticceria() {
             {/* Card 1 - Torte */}
             <div
               className={`group cursor-pointer flex flex-col h-full transition-all duration-700 delay-100 ${gallerySection.isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-20'
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-20'
                 }`}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
@@ -97,8 +97,8 @@ export default function Pasticceria() {
             {/* Card 2 - Cornetti */}
             <div
               className={`group cursor-pointer flex flex-col h-full transition-all duration-700 delay-200 ${gallerySection.isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-20'
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-20'
                 }`}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
@@ -116,8 +116,8 @@ export default function Pasticceria() {
             {/* Card 3 - Mignon */}
             <div
               className={`group cursor-pointer flex flex-col h-full transition-all duration-700 delay-300 ${gallerySection.isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-20'
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-20'
                 }`}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
@@ -135,13 +135,13 @@ export default function Pasticceria() {
             {/* Card 4 - Pasticciotto */}
             <div
               className={`group cursor-pointer flex flex-col h-full transition-all duration-700 delay-400 ${gallerySection.isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-20'
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-20'
                 }`}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
                 <img
-                  src="assets/Pasticiotto.jpg"
+                  src="public/Pasticiotto.jpg"
                   alt="Pasticciotto Leccese"
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -154,8 +154,8 @@ export default function Pasticceria() {
             {/* Card 5 - Paste di Mandorla */}
             <div
               className={`group cursor-pointer flex flex-col h-full transition-all duration-700 delay-500 ${gallerySection.isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-20'
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-20'
                 }`}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
@@ -173,8 +173,8 @@ export default function Pasticceria() {
             {/* Card 6 - Frollini */}
             <div
               className={`group cursor-pointer flex flex-col h-full transition-all duration-700 delay-600 ${gallerySection.isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-20'
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-20'
                 }`}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
@@ -196,8 +196,8 @@ export default function Pasticceria() {
       <section
         ref={inviteSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white transition-all duration-1000 ${inviteSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4 text-center">
@@ -218,8 +218,8 @@ export default function Pasticceria() {
       <section
         ref={featuresSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-16 bg-blue-50 transition-all duration-1000 ${featuresSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">

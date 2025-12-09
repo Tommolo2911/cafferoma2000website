@@ -80,8 +80,8 @@ export default function Gelateria() {
       <section
         ref={headerSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-12 bg-white transition-all duration-1000 ${headerSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -101,8 +101,8 @@ export default function Gelateria() {
       <section
         ref={tartufiSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-16 bg-white transition-all duration-1000 ${tartufiSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -111,7 +111,7 @@ export default function Gelateria() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src="/assets/Tartufo.jpg"
+                  src="cafferoma2000website/assets/Tartufo.jpg"
                   alt="Tartufi"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -133,8 +133,8 @@ export default function Gelateria() {
       <section
         ref={torteSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-16 bg-blue-50 transition-all duration-1000 ${torteSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -165,8 +165,8 @@ export default function Gelateria() {
       <section
         ref={rolleSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-16 bg-white transition-all duration-1000 ${rolleSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -197,8 +197,8 @@ export default function Gelateria() {
       <section
         ref={tortePersSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-16 bg-blue-50 transition-all duration-1000 ${tortePersSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -229,8 +229,8 @@ export default function Gelateria() {
       <section
         ref={vaschetteSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-16 bg-white transition-all duration-1000 ${vaschetteSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -261,8 +261,8 @@ export default function Gelateria() {
       <section
         ref={coniSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-16 bg-blue-50 transition-all duration-1000 ${coniSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -293,8 +293,8 @@ export default function Gelateria() {
       <section
         ref={inviteSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white transition-all duration-1000 ${inviteSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4 text-center">
@@ -313,8 +313,8 @@ export default function Gelateria() {
       <section
         ref={featuresSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-16 bg-blue-50 transition-all duration-1000 ${featuresSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -378,8 +378,8 @@ export default function Gelateria() {
       <div
         ref={infoSection.elementRef as React.RefObject<HTMLDivElement>}
         className={`container mx-auto px-4 mb-8 transition-all duration-1000 ${infoSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-lg p-8 text-center">
