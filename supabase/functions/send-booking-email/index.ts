@@ -1,0 +1,209 @@
+import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
+
+serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
+  }
+
+  try {
+    const { bookingData } = await req.json()
+
+    // Format booking details for email
+    const formatBookingDetails = (data: any) => {
+      let details = `
+NUOVA PRENOTAZIONE - ${data.booking_type.toUpperCase()}
+
+DETTAGLI CLIENTE:
+- Nome: ${data.customer_name}
+- Telefono: ${data.customer_phone}
+- Email: ${data.customer_email}
+
+DETTAGLI PRENOTAZIONE:
+- Tipo: ${data.booking_type}
+- Data ritiro: ${data.pickup_date}
+- Orario ritiro: ${data.pickup_time}
+- Totale stimato: €${data.total_amount.toFixed(2)}
+${data.notes ? `- Note: ${data.notes}` : ''}
+
+DETTAGLI PRODOTTI:
+`
+
+      // Format specific booking data based on type
+      if (data.booking_data) {
+        switch (data.booking_type) {
+          case 'cake':
+            details += `- Torta: ${data.booking_data.cakeType}
+${data.booking_data.filling ? `- Farcitura: ${data.booking_data.filling}` : ''}
+${data.booking_data.glaze ? `- Farcitura: ${data.booking_data.glaze}` : ''}
+${data.booking_data.exterior ? `- Esterno: ${data.booking_data.exterior}` : ''}
+${data.booking_data.weight ? `- Persone: ${data.booking_data.weight}` : ''}
+${data.booking_data.profiteroleCount ? `- Bignè: ${data.booking_data.profiteroleCount}` : ''}
+${data.booking_data.message ? `- Scritta: "${data.booking_data.message}"` : ''}
+${data.booking_data.allergies ? `- Allergie: ${data.booking_data.allergies}` : ''}`
+            break
+
+          case 'cornetti':
+            data.booking_data.items?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x ${item.product}
+   - Farcitura: ${item.filling}
+   ${item.extras?.length > 0 ? `- Extra: ${item.extras.join(', ')} (+€${(item.extras.length * 0.50).toFixed(2)})` : ''}
+`
+            })
+            break
+
+          case 'mignon':
+            details += `- Giorno: ${data.booking_data.dayType === 'weekday' ? 'Feriale' : 'Domenica'}
+`
+            data.booking_data.items?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x Vassoio ${item.product} (${item.format} pezzi)
+`
+            })
+            data.booking_data.monoporzioni?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x ${item.product} (monoporzione)
+`
+            })
+            break
+
+          case 'vaschette_gelato':
+            data.booking_data.items?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x Vaschetta ${item.size}
+   - Gusti: ${item.flavors.join(', ')}
+`
+            })
+            break
+
+          case 'torte_gelato':
+            data.booking_data.items?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x ${item.type} (${item.format})
+   ${item.flavors?.length > 0 ? `- Gusti: ${item.flavors.join(', ')}` : ''}
+   ${item.message ? `- Scritta: "${item.message}"` : ''}
+`
+            })
+            data.booking_data.spumoni?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x Spumone
+`
+            })
+            data.booking_data.tartufiMono?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x ${item.type} (monoporzione)
+`
+            })
+            break
+
+          case 'frollini':
+            data.booking_data.items?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x Confezione ${item.type} (${item.format} pezzi)
+`
+            })
+            break
+
+          case 'pasticciotti':
+            data.booking_data.items?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x ${item.type}
+`
+            })
+            break
+
+          case 'paste_mandorla':
+            data.booking_data.items?.forEach((item: any, index: number) => {
+              details += `${index + 1}. ${item.quantity}x ${item.type} (${item.weight}g)
+   ${item.packaging ? `- Confezione: ${item.packaging}` : ''}
+   ${item.travelPackaging ? '- Confezione da viaggio: Sì' : ''}
+   ${item.ribbon && item.ribbon !== 'Nessun nastro' ? `- Nastro: ${item.ribbon}` : ''}
+`
+            })
+            break
+
+          case 'table':
+            details += JSON.stringify(data.booking_data, null, 2)
+        }
+      }
+
+      return details
+    }
+
+    const emailBody = formatBookingDetails(bookingData)
+    const htmlBody = emailBody.replace(/\n/g, '<br>').replace(/ {2,}/g, '&nbsp;&nbsp;')
+
+    // Get SendGrid API key from environment
+    const sendgridApiKey = Deno.env.get('SENDGRID_API_KEY')
+    
+    if (!sendgridApiKey) {
+      console.warn('SENDGRID_API_KEY not configured, skipping email notification')
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          message: 'Booking processed successfully (email notification skipped - API key not configured)' 
+        }),
+        {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          status: 200,
+        },
+      )
+    }
+
+    // Send email using SendGrid
+    const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${sendgridApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        personalizations: [
+          {
+            to: [
+              {
+                email: 'leggierotommaso2001@gmail.com',
+                name: 'Caffè Roma 2000'
+              }
+            ],
+            subject: `Nuova Prenotazione - ${bookingData.customer_name} - ${bookingData.booking_type.toUpperCase()}`
+          }
+        ],
+        from: {
+          email: 'cafferoma2000@gmail.com',
+          name: 'Sistema Prenotazioni Caffè Roma 2000'
+        },
+        content: [
+          {
+            type: 'text/plain',
+            value: emailBody
+          },
+          {
+            type: 'text/html',
+            value: `<pre style="font-family: monospace; white-space: pre-wrap;">${htmlBody}</pre>`
+          }
+        ]
+      }),
+    })
+
+    if (!response.ok) {
+      const errorText = await response.text()
+      throw new Error(`SendGrid API error: ${response.status} - ${errorText}`)
+    }
+
+    console.log('Email sent successfully via SendGrid')
+
+    return new Response(
+      JSON.stringify({ success: true, message: 'Email sent successfully' }),
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 200,
+      },
+    )
+  } catch (error) {
+    console.error('Error sending email:', error)
+    return new Response(
+      JSON.stringify({ error: error.message }),
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 500,
+      },
+    )
+  }
+})
