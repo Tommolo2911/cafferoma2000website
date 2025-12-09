@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Award, Heart, Star, Clock } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation'; // Importa l'hook
+import pasticiotto from './public/Pasticiotto.jpg';
 
 export default function Pasticceria() {
   // Hook per diverse sezioni
@@ -140,11 +141,7 @@ export default function Pasticceria() {
                 }`}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
-                <img
-                  src="public/Pasticiotto.jpg"
-                  alt="Pasticciotto Leccese"
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                <img src={pasticiotto} alt="Tartufi" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
               <h3 className="text-xl font-semibold text-blue-900 mb-2">Pasticciotto Leccese</h3>
