@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 
+
 console.log(import.meta.env)
 
 export function useAuth() {
@@ -78,6 +79,23 @@ export function useAuth() {
     return { data, error };
   };
 
+
+  //funzione per Google
+  const signInWithGoogle = async () => {
+    if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
+      return {
+        data: null,
+        error: { message: 'Supabase not configured. Please check environment variables.' }
+      };
+    }
+
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+    });
+    return { data, error };
+  };
+
+
   const signOut = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
@@ -91,6 +109,7 @@ export function useAuth() {
     loading,
     signIn,
     signUp,
+    signInWithGoogle,
     signOut,
   };
 }

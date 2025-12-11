@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, ArrowLeft, Coffee, Eye, EyeOff, RotateCcw } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { supabase } from '../../lib/supabase';
+import { LogIn } from 'lucide-react';
 
 export default function LoginPage() {
   // Scroll to top when component mounts
@@ -19,7 +20,7 @@ export default function LoginPage() {
   const [showResetForm, setShowResetForm] = useState(false);
   const [resetEmail, setResetEmail] = useState('');
   const [message, setMessage] = useState<{ type: 'error' | 'success'; text: string } | null>(null);
-
+  const { signInWithGoogle } = useAuth();
   const { signIn } = useAuth();
   const navigate = useNavigate();
 
@@ -129,8 +130,8 @@ export default function LoginPage() {
           <div className="bg-white rounded-lg shadow-xl p-8">
             {message && (
               <div className={`p-4 rounded-lg mb-6 ${message.type === 'error'
-                  ? 'bg-red-50 border border-red-200 text-red-700'
-                  : 'bg-green-50 border border-green-200 text-green-700'
+                ? 'bg-red-50 border border-red-200 text-red-700'
+                : 'bg-green-50 border border-green-200 text-green-700'
                 }`}>
                 {message.text}
               </div>
@@ -185,6 +186,8 @@ export default function LoginPage() {
                   {loading ? 'Accesso in corso...' : 'Accedi'}
                 </button>
 
+
+
                 <div className="text-center">
                   <button
                     type="button"
@@ -219,6 +222,16 @@ export default function LoginPage() {
                     placeholder="La tua email registrata"
                   />
                 </div>
+
+                {/* Pulsante Google */}
+                <button
+                  type="button"
+                  onClick={signInWithGoogle}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center"
+                >
+                  <LogIn className="w-5 h-5 mr-2" />
+                  Accedi con Google
+                </button>
 
                 <div className="flex space-x-3">
                   <button
