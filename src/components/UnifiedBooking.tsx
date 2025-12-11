@@ -60,7 +60,7 @@ export default function UnifiedBooking() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src="/assets/Torta.jpg"
+                        src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310359/Torta_y7winl.jpg"
                         alt="Torte Artigianali"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -97,7 +97,7 @@ export default function UnifiedBooking() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src="assets/Croissant.jpg"
+                        src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310356/Croissant_rhtshu.jpg"
                         alt="Cornetti Artigianali"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -134,7 +134,7 @@ export default function UnifiedBooking() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src="/assets/Mignon.jpg"
+                        src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310357/Mignon_srmucl.jpg"
                         alt="Mignon"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -166,7 +166,7 @@ export default function UnifiedBooking() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src="/assets/Frollini.png"
+                        src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310242/Frollini_nje5jm.png"
                         alt="Frollini Artigianali"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -203,7 +203,7 @@ export default function UnifiedBooking() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src="/assets/Pasticiotto.jpg"
+                        src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310245/pasticiotto_iyot7r.jpg"
                         alt="Pasticciotto Leccese"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -236,7 +236,7 @@ export default function UnifiedBooking() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src="/assets/PasteDiMandorle.jpg"
+                        src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765311356/PasteDiMandorle2_yn79zs.jpg"
                         alt="Paste di Mandorla"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -289,7 +289,7 @@ export default function UnifiedBooking() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src="/assets/VaschetteGelato.png"
+                        src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765311437/VaschetteGelato2_flfxzo.jpg"
                         alt="Gelato Artigianale"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -324,7 +324,7 @@ export default function UnifiedBooking() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src="/assets/VetrinaTorteGelato.jpg"
+                        src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310362/VetrinaTorteGelato_vfx88n.jpg"
                         alt="Torte Gelato"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
