@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 
+console.log(import.meta.env)
+
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -40,9 +42,9 @@ export function useAuth() {
 
   const signIn = async (email: string, password: string) => {
     if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
-      return { 
-        data: null, 
-        error: { message: 'Supabase not configured. Please check environment variables.' } 
+      return {
+        data: null,
+        error: { message: 'Supabase not configured. Please check environment variables.' }
       };
     }
 
@@ -55,9 +57,9 @@ export function useAuth() {
 
   const signUp = async (email: string, password: string, firstName: string, lastName: string) => {
     if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
-      return { 
-        data: null, 
-        error: { message: 'Supabase not configured. Please check environment variables.' } 
+      return {
+        data: null,
+        error: { message: 'Supabase not configured. Please check environment variables.' }
       };
     }
 

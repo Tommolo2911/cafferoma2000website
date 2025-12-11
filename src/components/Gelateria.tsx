@@ -28,7 +28,7 @@ export default function Gelateria() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("assets/VetrinaTorteGelato.jpg")',
+            backgroundImage: 'url(https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310362/VetrinaTorteGelato_vfx88n.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
           }}
@@ -111,7 +111,7 @@ export default function Gelateria() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src="cafferoma2000website/assets/Tartufo.jpg"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310359/Tartufo_x2duyh.jpg"
                   alt="Tartufi"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -150,7 +150,7 @@ export default function Gelateria() {
               </div>
               <div className="relative overflow-hidden rounded-lg shadow-lg order-1 md:order-2">
                 <img
-                  src="/assets/TortaGelato.jpg"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310360/TortaGelato_rj32hf.jpg"
                   alt="Torte Gelato"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -175,7 +175,7 @@ export default function Gelateria() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src="/assets/Rollè.jpg"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310358/Rolle%CC%80_ol9uke.jpg"
                   alt="Rollè"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -214,7 +214,7 @@ export default function Gelateria() {
               </div>
               <div className="relative overflow-hidden rounded-lg shadow-lg order-1 md:order-2">
                 <img
-                  src="assets/TortaGelPers.png"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765311357/TortaGelPers2_et39ol.jpg"
                   alt="Torte Personalizzate"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -239,7 +239,7 @@ export default function Gelateria() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src="/assets/VaschetteGelato.png"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765311437/VaschetteGelato2_flfxzo.jpg"
                   alt="Vaschette"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -278,7 +278,7 @@ export default function Gelateria() {
               </div>
               <div className="relative overflow-hidden rounded-lg shadow-lg order-1 md:order-2">
                 <img
-                  src="/assets/Cono.png"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765311262/Cono2_u1sitm.jpg"
                   alt="Coni e Coppe"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                 />

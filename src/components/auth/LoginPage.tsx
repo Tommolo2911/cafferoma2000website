@@ -19,7 +19,7 @@ export default function LoginPage() {
   const [showResetForm, setShowResetForm] = useState(false);
   const [resetEmail, setResetEmail] = useState('');
   const [message, setMessage] = useState<{ type: 'error' | 'success'; text: string } | null>(null);
-  
+
   const { signIn } = useAuth();
   const navigate = useNavigate();
 
@@ -32,25 +32,27 @@ export default function LoginPage() {
 
     if (error) {
       console.error('Login error:', error);
-      if (error.message.includes('Invalid login credentials') || error.status === 400) {
-        setMessage({ 
-          type: 'error', 
-          text: 'Email o password non corretti. Verifica i dati inseriti e riprova.' 
+      const status = 'status' in error ? (error as any).status : undefined;
+
+      if (error.message.includes('Invalid login credentials') || status === 400) {
+        setMessage({
+          type: 'error',
+          text: 'Email o password non corretti. Verifica i dati inseriti e riprova.'
         });
       } else if (error.message.includes('Email not confirmed') || error.message.includes('email_not_confirmed')) {
-        setMessage({ 
-          type: 'error', 
-          text: 'Email non confermata. Controlla la tua casella di posta e clicca sul link di conferma, oppure contattaci direttamente per completare la prenotazione.' 
+        setMessage({
+          type: 'error',
+          text: 'Email non confermata. Controlla la tua casella di posta e clicca sul link di conferma, oppure contattaci direttamente per completare la prenotazione.'
         });
-      } else if (error.status === 422) {
-        setMessage({ 
-          type: 'error', 
-          text: 'Dati inseriti non validi. Controlla email e password.' 
+      } else if (status === 422) {
+        setMessage({
+          type: 'error',
+          text: 'Dati inseriti non validi. Controlla email e password.'
         });
-      } else if (error.status >= 500) {
-        setMessage({ 
-          type: 'error', 
-          text: 'Errore del server. Riprova più tardi.' 
+      } else if (typeof status === 'number' && status >= 500) {
+        setMessage({
+          type: 'error',
+          text: 'Errore del server. Riprova più tardi.'
         });
       } else {
         setMessage({ type: 'error', text: `Errore durante l'accesso: ${error.message}` });
@@ -86,9 +88,9 @@ export default function LoginPage() {
           setMessage({ type: 'error', text: 'Errore durante il reset. Riprova più tardi.' });
         }
       } else {
-        setMessage({ 
-          type: 'success', 
-          text: 'Email di reset inviata! Controlla la tua casella di posta.' 
+        setMessage({
+          type: 'success',
+          text: 'Email di reset inviata! Controlla la tua casella di posta.'
         });
         setShowResetForm(false);
         setResetEmail('');
@@ -105,14 +107,14 @@ export default function LoginPage() {
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
-            <Link 
+            <Link
               to="/"
               className="inline-flex items-center text-blue-900 hover:text-yellow-600 transition-colors mb-8"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               Torna alla Home
             </Link>
-            
+
             <div className="flex items-center justify-center mb-6">
               <Coffee className="w-12 h-12 text-yellow-600" />
             </div>
@@ -126,11 +128,10 @@ export default function LoginPage() {
 
           <div className="bg-white rounded-lg shadow-xl p-8">
             {message && (
-              <div className={`p-4 rounded-lg mb-6 ${
-                message.type === 'error' 
-                  ? 'bg-red-50 border border-red-200 text-red-700' 
+              <div className={`p-4 rounded-lg mb-6 ${message.type === 'error'
+                  ? 'bg-red-50 border border-red-200 text-red-700'
                   : 'bg-green-50 border border-green-200 text-green-700'
-              }`}>
+                }`}>
                 {message.text}
               </div>
             )}

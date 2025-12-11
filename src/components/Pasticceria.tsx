@@ -22,7 +22,7 @@ export default function Pasticceria() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("assets/Tiramisù.png")',
+            backgroundImage: 'url(https://res.cloudinary.com/duxp8wxlj/image/upload/v1765311357/Tiramisu%CC%802_rjopql.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
           }}
@@ -85,7 +85,7 @@ export default function Pasticceria() {
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
                 <img
-                  src="/assets/Torta.jpg"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310359/Torta_y7winl.jpg"
                   alt="Torte Artigianali"
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -104,7 +104,7 @@ export default function Pasticceria() {
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
                 <img
-                  src="/assets/Croissant.jpg"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310356/Croissant_rhtshu.jpg"
                   alt="Cornetti Artigianali"
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -123,7 +123,7 @@ export default function Pasticceria() {
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
                 <img
-                  src="/assets/Mignon.jpg"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310357/Mignon_srmucl.jpg"
                   alt="Mignon"
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -141,7 +141,11 @@ export default function Pasticceria() {
                 }`}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
-                <img src={pasticiotto} alt="Tartufi" />
+                <img
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310358/pasticiotto_jwb8i9.jpg"
+                  alt="Pasticiotto"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
               <h3 className="text-xl font-semibold text-blue-900 mb-2">Pasticciotto Leccese</h3>
@@ -157,7 +161,7 @@ export default function Pasticceria() {
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
                 <img
-                  src="/assets/PasteDiMandorle.jpg"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765311356/PasteDiMandorle2_yn79zs.jpg"
                   alt="Paste di Mandorla"
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -176,7 +180,7 @@ export default function Pasticceria() {
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
                 <img
-                  src="/assets/Frollini.png"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310357/Frollini_zoyqv3.png"
                   alt="Biscotti Artigianali"
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />

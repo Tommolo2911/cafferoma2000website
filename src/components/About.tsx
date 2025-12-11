@@ -18,8 +18,8 @@ export default function About() {
       <section
         ref={headerSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-20 bg-gradient-to-b from-blue-50 to-white transition-all duration-1000 ${headerSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">
@@ -40,8 +40,8 @@ export default function About() {
           <div
             ref={featuresSection.elementRef as React.RefObject<HTMLDivElement>}
             className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 transition-all duration-1000 ${featuresSection.isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-20'
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-20'
               }`}
           >
             {/* Feature 1 */}
@@ -112,8 +112,8 @@ export default function About() {
             className="grid lg:grid-cols-2 gap-12 items-center mb-20"
           >
             <div className={`order-2 lg:order-1 transition-all duration-1000 delay-300 ${passioneSection.isVisible
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 -translate-x-20'
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 -translate-x-20'
               }`}>
               <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6 font-serif">
                 Passione, Tradizione e Accoglienza
@@ -126,15 +126,16 @@ export default function About() {
               </p>
             </div>
             <div className={`order-1 lg:order-2 transition-all duration-1000 ${passioneSection.isVisible
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 translate-x-20'
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 translate-x-20'
               }`}>
               <div className="relative overflow-hidden rounded-lg shadow-xl">
                 <img
-                  src="/assets/InternoBar.png"
-                  alt="Staff accogliente del Caffè Roma 2000"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310358/InternoBar_nyfmx3.png"
+                  alt="Caffè Roma 2000"
                   className="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
             </div>
@@ -146,12 +147,12 @@ export default function About() {
             className="grid lg:grid-cols-2 gap-12 items-center mb-20"
           >
             <div className={`transition-all duration-1000 ${arteSection.isVisible
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 -translate-x-20'
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 -translate-x-20'
               }`}>
               <div className="relative overflow-hidden rounded-lg shadow-xl">
                 <img
-                  src="assets/caffe.png"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765311241/Caffe2_xc9cio.jpg"
                   alt="Dolci artigianali del Caffè Roma 2000"
                   className="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -159,8 +160,8 @@ export default function About() {
               </div>
             </div>
             <div className={`transition-all duration-1000 delay-300 ${arteSection.isVisible
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 translate-x-20'
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 translate-x-20'
               }`}>
               <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6 font-serif">
                 L'Arte del Sapore Autentico
@@ -180,8 +181,8 @@ export default function About() {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <div className={`order-2 lg:order-1 transition-all duration-1000 delay-300 ${vieniSection.isVisible
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 -translate-x-20'
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 -translate-x-20'
               }`}>
               <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6 font-serif">
                 Vieni a Trovarci
@@ -198,12 +199,12 @@ export default function About() {
               </div>
             </div>
             <div className={`order-1 lg:order-2 transition-all duration-1000 ${vieniSection.isVisible
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 translate-x-20'
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 translate-x-20'
               }`}>
               <div className="relative overflow-hidden rounded-lg shadow-xl">
                 <img
-                  src="/assets/MonopoliMare.png"
+                  src="https://res.cloudinary.com/duxp8wxlj/image/upload/v1765310357/MonopoliMare_htthfz.png"
                   alt="Vista mare vicino al Caffè Roma 2000 a Monopoli"
                   className="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -221,8 +222,8 @@ export default function About() {
       <section
         ref={filosofiaSection.elementRef as React.RefObject<HTMLElement>}
         className={`py-20 bg-gradient-to-b from-blue-50 to-white transition-all duration-1000 ${filosofiaSection.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-20'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
           }`}
       >
         <div className="container mx-auto px-4">

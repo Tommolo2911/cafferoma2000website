@@ -58,7 +58,7 @@ export function useBooking() {
             },
             body: JSON.stringify({ bookingData: data }),
           });
-          
+
           if (!emailResponse.ok) {
             const errorText = await emailResponse.text();
             console.warn('Email notification warning:', errorText);
@@ -76,13 +76,13 @@ export function useBooking() {
     } catch (err: any) {
       console.error('Booking creation error:', err);
       let errorMessage = 'Errore durante la creazione della prenotazione';
-      
+
       if (err.message?.includes('fetch')) {
         errorMessage = 'Errore di connessione. Verifica la tua connessione internet e riprova.';
       } else if (err.message) {
         errorMessage = err.message;
       }
-      
+
       setError(errorMessage);
       return { data: null, error: errorMessage };
     } finally {
@@ -117,13 +117,13 @@ export function useBooking() {
       return { data: data || [], error: null };
     } catch (err: any) {
       let errorMessage = 'Errore durante il recupero delle prenotazioni';
-      
+
       if (err.message?.includes('fetch')) {
         errorMessage = 'Errore di connessione. Verifica la tua connessione internet e riprova.';
       } else if (err.message) {
         errorMessage = err.message;
       }
-      
+
       setError(errorMessage);
       return { data: [], error: errorMessage };
     } finally {
