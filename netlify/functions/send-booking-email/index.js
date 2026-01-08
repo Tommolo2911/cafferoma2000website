@@ -25,7 +25,7 @@ DETTAGLI PRENOTAZIONE:
 - Tipo: ${data.booking_type}
 - Data ritiro: ${data.pickup_date}
 - Orario ritiro: ${data.pickup_time}
-- Totale stimato: €${data.total_amount.toFixed(2)}
+- Totale stimato: €${(data.total_amount || 0).toFixed(2)}
 ${data.notes ? `- Note: ${data.notes}` : ''}
 
 DETTAGLI PRODOTTI:
