@@ -1,9 +1,4 @@
-const { mail: sgMail } = require('@sendgrid/mail');
-
-const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'content-type',
-};
+const sgMail = require('@sendgrid/mail');
 
 exports.handler = async (event) => {
     if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers: corsHeaders, body: 'ok' };
