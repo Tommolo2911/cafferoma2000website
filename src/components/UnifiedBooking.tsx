@@ -1,7 +1,6 @@
-import React from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ChefHat, Coffee, Heart, Cookie, Star, Snowflake, Calendar, Users, Clock } from 'lucide-react';
+import { ArrowLeft, ChefHat, Coffee, Cookie, Star, Snowflake, Calendar, Users } from 'lucide-react';
 
 export default function UnifiedBooking() {
   // Scroll to top when component mounts

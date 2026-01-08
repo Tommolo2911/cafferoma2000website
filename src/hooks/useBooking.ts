@@ -25,7 +25,7 @@ export function useBooking() {
 
     // Check if Supabase is properly configured
     if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
-      const errorMessage = 'Database not configured. Please check environment variables.';
+      const errorMessage = 'Supabase not configured';
       setError(errorMessage);
       setLoading(false);
       return { data: null, error: errorMessage };
@@ -50,15 +50,13 @@ export function useBooking() {
       try {
         const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
         if (supabaseUrl) {
-          const emailResponse = await fetch(`${supabaseUrl}/functions/v1/send-booking-email`, {
+          const emailResponse = await fetch('/.netlify/functions/send-booking-email', {
             method: 'POST',
             headers: {
-              'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({ bookingData: data }),
           });
-
           if (!emailResponse.ok) {
             const errorText = await emailResponse.text();
             console.warn('Email notification warning:', errorText);
