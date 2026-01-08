@@ -1,4 +1,5 @@
-const resend = require('resend').Resend(process.env.RESEND_API_KEY);
+const resend = require('resend').Resend();
+resend.setApiKey(process.env.RESEND_API_KEY);
 
 const corsHeaders = {  // ← SPOSATI IN ALTO
     'Access-Control-Allow-Origin': '*',
