@@ -1,6 +1,65 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ChefHat, Coffee, Cookie, Star, Snowflake, Calendar, Users } from 'lucide-react';
+const ArrowLeft = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 12H6" />
+    <path d="M12 5l-7 7 7 7" />
+  </svg>
+);
+
+const ChefHat = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 11c0-3 2.5-5 5.5-5 1.2 0 2.2.4 3 .9.8-.5 1.8-.9 3-.9 3 0 5.5 2 5.5 5 0 2-1 4-4 4H7c-3 0-4-2-4-4z" />
+    <path d="M7 15v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2" />
+  </svg>
+);
+
+const Coffee = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 3v1" />
+    <path d="M16 3v1" />
+    <path d="M3 8h14v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" />
+    <path d="M21 10a3 3 0 0 0 0 6" />
+  </svg>
+);
+
+const Cookie = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    <circle cx="13.5" cy="10.5" r="0.5" />
+    <circle cx="9" cy="13" r="0.5" />
+    <circle cx="12" cy="15.5" r="0.5" />
+  </svg>
+);
+
+const Star = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 .9l2.9 6 6.6.6-4.8 4.2 1.4 6.4L12 16.9 5.9 18.1l1.4-6.4L2.5 7.5l6.6-.6L12 .9z" />
+  </svg>
+);
+
+const Snowflake = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2v20" />
+    <path d="M5 6l14 12" />
+    <path d="M19 6L5 18" />
+    <path d="M2 12h20" />
+  </svg>
+);
+
+const Calendar = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+    <path d="M16 2v4M8 2v4M3 10h18" />
+  </svg>
+);
+
+const Users = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>
+);
 
 export default function UnifiedBooking() {
   // Scroll to top when component mounts

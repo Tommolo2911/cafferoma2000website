@@ -1,11 +1,18 @@
+// Removed triple-slash reference to 'node' types to avoid "Cannot find type definition file for 'node'".
+
+// Minimal declaration so `process.env` is recognized by TypeScript in this environment
+declare const process: {
+  env: { [key: string]: string | undefined };
+};
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const { mail: sgMail } = require('@sendgrid/mail');
+import sgMail from '@sendgrid/mail';
 
-exports.handler = async (event: { httpMethod: string; body: string; }, context: any) => {
+export const handler = async (event: { httpMethod: string; body: string; }, context: any) => {
   if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
