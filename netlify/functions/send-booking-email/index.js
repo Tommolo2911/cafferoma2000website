@@ -1,4 +1,4 @@
-const sgMail = require('@sendgrid/mail');
+const resend = require('resend').Resend(process.env.RESEND_API_KEY);
 
 const corsHeaders = {  // ← SPOSATI IN ALTO
     'Access-Control-Allow-Origin': '*',
@@ -6,7 +6,7 @@ const corsHeaders = {  // ← SPOSATI IN ALTO
 };
 
 
-exports.handler = async (event) => {
+export async function handler(event) {
     if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers: corsHeaders, body: 'ok' };
 
     try {
@@ -130,15 +130,15 @@ ${data.booking_data.allergies ? `- Allergie: ${data.booking_data.allergies}` : '
         const emailBody = formatBookingDetails(bookingData);
         const htmlBody = emailBody.replace(/\n/g, '<br>').replace(/ {2,}/g, '&nbsp;&nbsp;');
 
-        const apiKey = process.env.SENDGRID_API_KEY;
-        if (!apiKey) return {
-            statusCode: 200,
-            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ success: true, message: 'No API key' })
-        };
+        await resend.emails.send({
+            from: 'no-reply@cafferoma2000.com',
+            to: 'leggierotommaso2001@gmail.com',
+            subject: `Prenotazione ${bookingData.customer_name}`,
+            html: `<pre style="font-family:monospace;white-space:pre-wrap">${htmlBody}</pre>`
+        });
 
-        sgMail.setApiKey(apiKey);
-        await sgMail.send({
+        resend.setApiKey(apiKey);
+        await resend.emails.send({
             personalizations: [{
                 to: [{ email: 'leggierotommaso2001@gmail.com', name: 'Caffè Roma 2000' }],
                 subject: `Nuova Prenotazione - ${bookingData.customer_name} - ${bookingData.booking_type.toUpperCase()} `
@@ -162,4 +162,4 @@ ${data.booking_data.allergies ? `- Allergie: ${data.booking_data.allergies}` : '
             body: JSON.stringify({ error: error.message })
         };
     }
-};
+}
