@@ -1,33 +1,17 @@
 {
-  "name": "send-booking-email",
-  "version": "1.0.0",
-  "description": "website del caffe roma 2000 # cafferoma2000website # cafferoma2000website # cafferoma2000website",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@sendgrid/mail": "^8.1.6",
+    "lucide-react": "^0.562.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-router-dom": "^7.12.0",
     "resend": "^6.7.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tommolo2911/cafferoma2000website.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Tommolo2911/cafferoma2000website/issues"
-  },
-  "homepage": "https://github.com/Tommolo2911/cafferoma2000website#readme",
   "devDependencies": {
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/react-router-dom": "^5.3.3"
+  },
+  "scripts": {
+    "build": "echo 'Functions only - no frontend build'"
   }
 }

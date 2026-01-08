@@ -1,7 +1,24 @@
 // components/TermsConditions.jsx
-import { useEffect } from 'react';
+import { useEffect, type SVGProps } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, FileText } from 'lucide-react';
+
+/* Local lightweight SVG icon components to avoid external dependency */
+function ArrowLeft(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+    );
+}
+function FileText(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 2v6h6" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 13h8M8 17h8" />
+        </svg>
+    );
+}
 
 export default function TermsConditions() {
     useEffect(() => {

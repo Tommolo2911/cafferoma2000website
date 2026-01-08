@@ -2,6 +2,18 @@ import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from './useAuth';
 
+declare global {
+  interface ImportMetaEnv {
+    readonly VITE_SUPABASE_URL?: string;
+    readonly VITE_SUPABASE_ANON_KEY?: string;
+    // add more env vars here as needed...
+  }
+
+  interface ImportMeta {
+    readonly env: ImportMetaEnv;
+  }
+}
+
 export interface BookingData {
   booking_type: string;
   customer_name: string;
@@ -24,7 +36,7 @@ export function useBooking() {
     setError(null);
 
     // Check if Supabase is properly configured
-    if (!(import.meta as any).env?.VITE_SUPABASE_URL || !(import.meta as any).env?.VITE_SUPABASE_ANON_KEY) {
+    if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
       const errorMessage = 'Supabase not configured';
       setError(errorMessage);
       setLoading(false);
@@ -48,7 +60,7 @@ export function useBooking() {
 
       // Send email notification
       try {
-        const supabaseUrl = (import.meta as any).env?.VITE_SUPABASE_URL;
+        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
         if (supabaseUrl) {
           const emailResponse = await fetch('/.netlify/functions/send-booking-email', {
             method: 'POST',
@@ -92,7 +104,7 @@ export function useBooking() {
     if (!user) return { data: [], error: 'User not authenticated' };
 
     // Check if Supabase is properly configured
-    if (!(import.meta as any).env?.VITE_SUPABASE_URL || !(import.meta as any).env?.VITE_SUPABASE_ANON_KEY) {
+    if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
       const errorMessage = 'Database not configured. Please check environment variables.';
       setError(errorMessage);
       return { data: [], error: errorMessage };
