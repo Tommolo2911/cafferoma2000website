@@ -1,12 +1,10 @@
 [build]
   command = "npm run build"
+  publish = "dist"
   functions = "netlify/functions"
-  publish = "dist"  # cartella output build
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"cd netlify/functions/send-booking-email/
-touch index.js
-code index.js  # o nano
-
+  to = "/index.html"
   status = 200
+
